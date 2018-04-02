@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email:params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-      # ƒƒOƒCƒ“¬Œ÷‚µ‚½ê‡
+      # ãƒ­ã‚°ã‚¤ãƒ³æˆåŠŸã—ãŸå ´åˆ
     else
-      flash.now[:danger] = 'ƒƒOƒCƒ“‚ÉŽ¸”s‚µ‚Ü‚µ‚½'
+      flash.now[:danger] = 'ãƒ­ã‚°ã‚¤ãƒ³ã«å¤±æ•—ã—ã¾ã—ãŸ'
       render 'new'
     end
   end
